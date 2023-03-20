@@ -61,24 +61,36 @@
       <version>1.5.3.Final</version>
     </dependency>
     <dependency>
-      <artifactId>feign-okhttp</artifactId>
-      <groupId>io.github.openfeign</groupId>
-      <version>10.11</version>
-    </dependency>
-    <dependency>
-      <artifactId>feign-gson</artifactId>
-      <groupId>io.github.openfeign</groupId>
-      <version>10.11</version>
-    </dependency>
-    <dependency>
-      <artifactId>feign-slf4j</artifactId>
-      <groupId>io.github.openfeign</groupId>
-      <version>10.11</version>
-    </dependency>
-    <dependency>
       <artifactId>lombok</artifactId>
       <groupId>org.projectlombok</groupId>
       <optional>true</optional>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-databind</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <version>2.13.3</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-statemachine-core</artifactId>
+      <groupId>org.springframework.statemachine</groupId>
+      <version>3.2.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-statemachine-data-jpa</artifactId>
+      <groupId>org.springframework.statemachine</groupId>
+      <version>3.2.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-cloud-dependencies</artifactId>
+      <groupId>org.springframework.cloud</groupId>
+      <scope>import</scope>
+      <type>pom</type>
+      <version>2022.0.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+      <groupId>org.springframework.cloud</groupId>
+      <version>4.0.1</version>
     </dependency>
     <dependency>
       <artifactId>spring-boot-starter-test</artifactId>
@@ -105,5 +117,4 @@
     <java.version>17</java.version>
   </properties>
   <version>0.0.1-SNAPSHOT</version>
-
 </project>
