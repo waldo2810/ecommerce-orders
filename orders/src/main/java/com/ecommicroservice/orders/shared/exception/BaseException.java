@@ -3,11 +3,7 @@ package com.ecommicroservice.orders.shared.exception;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.UUID;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
 @Getter
@@ -19,10 +15,11 @@ public class BaseException extends RuntimeException {
   private final String message;
   private final LocalDateTime date;
   private final ExceptionCode exceptionCode;
-  private Throwable cause;
   private final String id = UUID.randomUUID().toString();
+  private Throwable cause;
 
-  protected BaseException(boolean retryable, HttpStatus status, String message, ExceptionCode exceptionCode) {
+  protected BaseException(boolean retryable, HttpStatus status, String message,
+      ExceptionCode exceptionCode) {
     this.retryable = retryable;
     this.code = exceptionCode.getCode();
     this.message = message;
@@ -31,7 +28,8 @@ public class BaseException extends RuntimeException {
     this.date = LocalDateTime.now(ZoneId.systemDefault());
   }
 
-  protected BaseException(boolean retryable, HttpStatus status, String message, ExceptionCode exceptionCode, Throwable cause) {
+  protected BaseException(boolean retryable, HttpStatus status, String message,
+      ExceptionCode exceptionCode, Throwable cause) {
     this.retryable = retryable;
     this.code = exceptionCode.getCode();
     this.message = message;
@@ -41,7 +39,8 @@ public class BaseException extends RuntimeException {
     this.date = LocalDateTime.now(ZoneId.systemDefault());
   }
 
-  protected BaseException(boolean retryable, String message, ExceptionCode exceptionCode, Throwable cause){
+  protected BaseException(boolean retryable, String message, ExceptionCode exceptionCode,
+      Throwable cause) {
     this.retryable = retryable;
     this.code = exceptionCode.getCode();
     this.message = message;
