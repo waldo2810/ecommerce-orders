@@ -6,7 +6,10 @@ import com.ecommicroservice.orders.infrastructure.client.ProductClient;
 import com.ecommicroservice.orders.infrastructure.client.ProductResponse;
 import com.ecommicroservice.orders.infrastructure.mapper.OrderItemMapper;
 import com.ecommicroservice.orders.infrastructure.repository.OrderItemRepository;
+import com.ecommicroservice.orders.shared.exception.BaseException;
+import com.ecommicroservice.orders.shared.exception.ProductNotFoundException;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
@@ -22,7 +25,7 @@ public class SaveOrderItemAdapter implements SaveOrderItemService {
     // Check if product exists
     ProductResponse productResponse = productClient.getProduct(itemToSave.getProductId());
     if (productResponse == null) {
-      throw new RuntimeException("Product with id " + itemToSave.getProductId() + " not found.");
+      throw new ProductNotFoundException("Product with id" + itemToSave.getId() + " was not found.");
     }
     return orderItemMapper.toEntity(orderItemRepository.save(orderItemMapper.toDto(itemToSave)));
   }
