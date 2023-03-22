@@ -16,16 +16,16 @@ public class SaveOrderItemAdapter implements SaveOrderItemService {
 
   private final OrderItemRepository orderItemRepository;
   private final OrderItemMapper orderItemMapper;
-  private final ProductClient productClient;
+  /*private final ProductClient productClient;*/
 
   @Override
   public OrderItem save(OrderItem itemToSave) {
     // Check if product exists
-    ProductResponse productResponse = productClient.getProduct(itemToSave.getProductId());
+/*    ProductResponse productResponse = productClient.getProduct(itemToSave.getProductId());
     if (productResponse == null) {
       throw new ProductNotFoundException(
           "Product with id" + itemToSave.getId() + " was not found.");
-    }
+    }*/
     return orderItemMapper.toEntity(orderItemRepository.save(orderItemMapper.toDto(itemToSave)));
   }
 }

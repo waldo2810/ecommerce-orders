@@ -14,11 +14,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "orders")
 public class OrderDto {
-
   @Id
   private String id;
+  @Column(name = "product_id")
+  private String productId;
   private String customer;
-  private String date;
+  private int quantity;
   @Column(name = "total_amount")
   private double totalAmount;
 
