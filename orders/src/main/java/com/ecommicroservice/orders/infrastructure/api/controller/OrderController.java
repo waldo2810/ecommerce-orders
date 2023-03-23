@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,8 +39,8 @@ public class OrderController {
   }
 
   @PostMapping
-  public ResponseEntity<Order> saveOrder(@RequestBody Order order) {
-    return ResponseEntity.ok(saveOrder.save(order));
+  public ResponseEntity<Order> saveOrder(@RequestBody Order order, @RequestHeader("id") String id) {
+    return ResponseEntity.ok(saveOrder.save(order, id));
   }
 
   @PutMapping

@@ -4,14 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class Order {
-
+public class Client {
   private String id;
-  private String idClient;
-  private String idProduct;
-  private double totalAmount;
-
+  private String tipoId;
+  private String nombre;
+  private String apellido;
+  private Boolean estado;
 }
