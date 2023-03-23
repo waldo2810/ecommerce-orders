@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   application:
     name: orders
@@ -10,7 +12,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/orders
     username: postgres
-    password: 1234
+    password: admin
     test-on-borrow: true
     validation-query: SELECT 1 FROM dual
   jpa:

@@ -17,9 +17,8 @@ public class OrderDto {
 
   @Id
   private String id;
-  private String customer;
-  private String date;
-  @Column(name = "total_amount")
+  private String idClient;
+  private String idProduct;
   private double totalAmount;
 
 }
