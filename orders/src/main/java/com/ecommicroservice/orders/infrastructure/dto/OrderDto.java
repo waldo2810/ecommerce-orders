@@ -21,6 +21,7 @@ public class OrderDto {
   private String id;
   @Column(name = "product_id")
   private String productId;
+  @Column(name = "id_client")
   private String idClient;
   private String customer;
   private int quantity;

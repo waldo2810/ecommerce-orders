@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientResponse {
+
   private String id;
   private String tipoId;
   private String nombre;

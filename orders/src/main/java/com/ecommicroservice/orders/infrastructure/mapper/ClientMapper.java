@@ -7,6 +7,8 @@ import org.mapstruct.MappingConstants.ComponentModel;
 
 @Mapper(componentModel = ComponentModel.SPRING)
 public interface ClientMapper {
+
   Client toEntity(ClientResponse clientResponse);
+
   ClientResponse toResponse(Client client);
 }

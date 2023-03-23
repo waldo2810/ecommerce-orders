@@ -103,22 +103,22 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+      <scope>test</scope>
       <version>3.24.2</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.9.2</version>
+      <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
+      <version>5.9.2</version>
     </dependency>
     <dependency>
-      <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>4.1.0</version>
+      <groupId>org.mockito</groupId>
       <scope>test</scope>
+      <version>4.1.0</version>
     </dependency>
   </dependencies>
   <description>Orders module</description>

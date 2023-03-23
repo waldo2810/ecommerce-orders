@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class ClientGetAdapter implements ClientGetService {
+
   private final ClientClient clientClient;
   private final ClientMapper clientMapper;
 

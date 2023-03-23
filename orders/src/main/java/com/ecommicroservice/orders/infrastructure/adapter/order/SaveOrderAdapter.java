@@ -26,8 +26,9 @@ public class SaveOrderAdapter implements SaveService<Order> {
   public Order save(Order itemToSave) {
     //validate product exists
     ProductResponse product = productClient.getProduct(itemToSave.getProductId());
-    if (product == null){
-      throw new ProductNotFoundException("Product with id: "+itemToSave.getProductId()+" does not exits.");
+    if (product == null) {
+      throw new ProductNotFoundException(
+          "Product with id: " + itemToSave.getProductId() + " does not exits.");
     }
 
     // Save order in the database
